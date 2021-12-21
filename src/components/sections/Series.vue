@@ -26,12 +26,11 @@
 
 
             <div class="voto">
-            <i class="fas fa-star" :class=" series.vote_average > 0 ? 'stella_on' : '' "></i>
-            <i class="fas fa-star" :class=" series.vote_average > 1 ? 'stella_on' : '' "></i>
-            <i class="fas fa-star" :class=" series.vote_average > 2 ? 'stella_on' : '' "></i>
-            <i class="fas fa-star" :class=" series.vote_average > 3 ? 'stella_on' : '' "></i>
-            <i class="fas fa-star" :class=" series.vote_average > 4 ? 'stella_on' : '' "></i>
-            <span>{{series.vote_average}}</span>
+                <i class="fas fa-star" :class=" series.vote_average > 0 ? 'stella_on' : '' "></i>
+                <i class="fas fa-star" :class=" series.vote_average > 1 ? 'stella_on' : '' "></i>
+                <i class="fas fa-star" :class=" series.vote_average > 2 ? 'stella_on' : '' "></i>
+                <i class="fas fa-star" :class=" series.vote_average > 3 ? 'stella_on' : '' "></i>
+                <i class="fas fa-star" :class=" series.vote_average > 4 ? 'stella_on' : '' "></i>
             </div>
 
             <div class="descrizione">

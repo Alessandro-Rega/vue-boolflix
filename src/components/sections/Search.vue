@@ -22,7 +22,7 @@ export default {
     data(){
         return{
             cerca: "",
-            selezione_film: false,
+            selezione_film: true,
         }
     }
 }
