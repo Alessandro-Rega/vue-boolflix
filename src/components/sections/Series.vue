@@ -1,40 +1,41 @@
 <template>
-  <div class="film_card">
+  <div class="series_card">
 
-        <img v-if="film.poster_path != null" :src="'https://image.tmdb.org/t/p/w342' + film.poster_path" alt="poster" class="post">
+        <img v-if="series.poster_path != null" :src="'https://image.tmdb.org/t/p/w342' + series.poster_path" alt="poster" class="post">
         <img v-else src="../../assets/img/not-found.png" alt="poster" class="post">
 
         <div class="container">
             <div class="titolo">
                 <span>Titolo: </span>
-                <span>{{film.title}}</span>
+                <span>{{series.name}}</span>
             </div>
 
             <div class="titolo_originale">
                 <span>Titolo originale: </span>
-                <span>{{film.original_title}}</span>
+                <span>{{series.original_name}}</span>
             </div>
 
             <div class="bandiera">
-                <img v-if="film.original_language == 'it'" src="../../assets/flags/italy.png" alt="lingua">
-                <img v-else-if="film.original_language == 'en'" src="../../assets/flags/uk.png" alt="lingua">
-                <img v-else-if="film.original_language == 'es'" src="../../assets/flags/spain.png" alt="lingua">
-                <img v-else-if="film.original_language == 'fr'" src="../../assets/flags/france.png" alt="lingua">
-                <img v-else-if="film.original_language == 'gr'" src="../../assets/flags/germany.png" alt="lingua">
-                <img v-else-if="film.original_language == 'zh'" src="../../assets/flags/japan.png" alt="lingua">
+                <img v-if="series.original_language == 'it'" src="../../assets/flags/italy.png" alt="lingua">
+                <img v-else-if="series.original_language == 'en'" src="../../assets/flags/uk.png" alt="lingua">
+                <img v-else-if="series.original_language == 'es'" src="../../assets/flags/spain.png" alt="lingua">
+                <img v-else-if="series.original_language == 'fr'" src="../../assets/flags/france.png" alt="lingua">
+                <img v-else-if="series.original_language == 'gr'" src="../../assets/flags/germany.png" alt="lingua">
+                <img v-else-if="series.original_language == 'zh'" src="../../assets/flags/japan.png" alt="lingua">
             </div>
 
 
             <div class="voto">
-                <i class="fas fa-star" :class=" film.vote_average > 0 ? 'stella_on' : '' "></i>
-                <i class="fas fa-star" :class=" film.vote_average > 1 ? 'stella_on' : '' "></i>
-                <i class="fas fa-star" :class=" film.vote_average > 2 ? 'stella_on' : '' "></i>
-                <i class="fas fa-star" :class=" film.vote_average > 3 ? 'stella_on' : '' "></i>
-                <i class="fas fa-star" :class=" film.vote_average > 4 ? 'stella_on' : '' "></i>
+            <i class="fas fa-star" :class=" series.vote_average > 0 ? 'stella_on' : '' "></i>
+            <i class="fas fa-star" :class=" series.vote_average > 1 ? 'stella_on' : '' "></i>
+            <i class="fas fa-star" :class=" series.vote_average > 2 ? 'stella_on' : '' "></i>
+            <i class="fas fa-star" :class=" series.vote_average > 3 ? 'stella_on' : '' "></i>
+            <i class="fas fa-star" :class=" series.vote_average > 4 ? 'stella_on' : '' "></i>
+            <span>{{series.vote_average}}</span>
             </div>
 
             <div class="descrizione">
-                <p>{{film.overview}}</p>
+                <p>{{series.overview}}</p>
             </div>
         </div>
 
@@ -43,9 +44,9 @@
 
 <script>
 export default {
-    name: 'Film',
+    name: 'Series',
     props:{
-        film: Object,
+        series: Object,
     },
 }
 </script>
@@ -58,7 +59,7 @@ export default {
     }
 }
 
-.film_card{
+.series_card{
     width: max-content;
     height: max-content;
     position: relative;
