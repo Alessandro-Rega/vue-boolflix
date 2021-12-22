@@ -16,7 +16,7 @@
             </div>
 
             <div class="bandiera">
-                <img v-if="film.original_language == ('it' || 'en' || 'es' || 'fr' || 'gr' || 'zh')" :src="require('../../assets/flags/' + film.original_language + '.png')" :alt="film.original_language">
+                <img v-if="bandiere.includes(film.original_language)" :src="require('../../assets/flags/' + film.original_language + '.png')" :alt="film.original_language">
                 <img v-else src="" alt="404">
             </div>
 
@@ -40,6 +40,18 @@
 <script>
 export default {
     name: 'Film',
+    data(){
+        return{
+            bandiere:[
+                'it',
+                'en',
+                'es',
+                'fr',
+                'gr',
+                'ja'
+            ]
+        }
+    },
     props:{
         film: Object,
     },
