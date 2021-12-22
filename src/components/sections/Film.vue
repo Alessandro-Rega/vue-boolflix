@@ -16,12 +16,8 @@
             </div>
 
             <div class="bandiera">
-                <img v-if="film.original_language == 'it'" src="../../assets/flags/italy.png" alt="lingua">
-                <img v-else-if="film.original_language == 'en'" src="../../assets/flags/uk.png" alt="lingua">
-                <img v-else-if="film.original_language == 'es'" src="../../assets/flags/spain.png" alt="lingua">
-                <img v-else-if="film.original_language == 'fr'" src="../../assets/flags/france.png" alt="lingua">
-                <img v-else-if="film.original_language == 'gr'" src="../../assets/flags/germany.png" alt="lingua">
-                <img v-else-if="film.original_language == 'zh'" src="../../assets/flags/japan.png" alt="lingua">
+                <img v-if="film.original_language == ('it' || 'en' || 'es' || 'fr' || 'gr' || 'zh')" :src="require('../../assets/flags/' + film.original_language + '.png')" :alt="film.original_language">
+                <img v-else src="" alt="404">
             </div>
 
 

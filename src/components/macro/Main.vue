@@ -32,6 +32,7 @@ export default {
         searchMovie(cerca, selezione_film){
             if(selezione_film == true){
                 this.arraySeries = [];
+                this.arrayFilm = [];
                 axios
                 .get("https://api.themoviedb.org/3/search/movie", {
                     params: {
@@ -52,6 +53,7 @@ export default {
             }
             else{
                 this.arrayFilm = [];
+                this.arraySeries = [];
                 axios
                 .get("https://api.themoviedb.org/3/search/tv", {
                     params: {
